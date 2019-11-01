@@ -9,7 +9,7 @@ body, html {
   height: 100%; }
 
 h1 {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #000;
   padding: 10px;
   flex-grow: 0;
   font-size: 2em; }
@@ -198,8 +198,24 @@ select {
 
 footer {
   flex-grow: 0;
-  margin-top: 20px; }
+  margin-top: 20px;
+  border-top: 2px solid #000; }
+  footer input {
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    margin: 15px;
+    display: none;
+    height: 28px; }
+    footer input:focus {
+      outline: none; }
   footer h2 {
-    padding: 15px;
-    border-top: 2px solid black; }
+    margin: 15px;
+    display: inline-block; }
+  footer #footer-edit-btn {
+    text-decoration: none;
+    color: #777;
+    font-size: 0.9em; }
+    footer #footer-edit-btn i {
+      font-size: 0.6em; }
 

@@ -2,12 +2,16 @@ const path = require('path');
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
 
 module.exports = {
+    target: 'web',
     mode: 'development',
     entry: './src/js/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js',
-        publicPath: '../'
+        publicPath: 'dist'
+    },
+    devServer:{
+        watchContentBase: true
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -20,7 +24,10 @@ module.exports = {
                 test: /\.sass$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../'
+                        }
                     },
                     'css-loader',
                     'sass-loader'
@@ -32,7 +39,8 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'img/search.png'
+                            name: 'search.png',
+                            outputPath: 'img'
                         }
                     }
                 ]

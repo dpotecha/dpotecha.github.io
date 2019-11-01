@@ -4,7 +4,7 @@ const UI = require('./ui.js');
 const Storage = require('./storage.js');
 
 // Event show Tasks filtered by 'all', 'all' after document loading
-UI.filterTasks();
+UI.appStart();
 
 //Event Create a new Task
 document.querySelector('#create-form').addEventListener('submit', (e) => {
@@ -69,4 +69,10 @@ document.querySelector('#create-btn').addEventListener('click', () => {
   //Close Task Create Form
 document.querySelector('#cancel-btn').addEventListener('click', () => {
     UI.closeModalForm();
+});
+
+
+document.querySelector('#footer-edit-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    UI.changeUserName();
 });

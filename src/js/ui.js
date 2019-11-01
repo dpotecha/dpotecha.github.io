@@ -10,10 +10,19 @@ const createForm = document.querySelector('#create-form'),
       newTaskDescr = document.querySelector('#create-form-descr'),
       newTaskPriority = document.querySelector('#create-form-priority'),
       tasksContainer = document.querySelector('.tasks'),
-      modalWrap = document.querySelector('.modal-wrap');
+      modalWrap = document.querySelector('.modal-wrap'),
+      userName = document.querySelector('#app-user-name'),
+      userNameField = document.querySelector('#app-user-name-input')
 
 //UI Class
 class UI{
+    
+    //Shows all tasks from LocalStorage and saved user name when app starts
+    static appStart(){
+        const storeUserName = Storage.getUserName();
+        UI.filterTasks();
+        userName.innerHTML = storeUserName;
+    }
     
     //Show filtered tasks on the page
     static showTasks(task){
@@ -212,6 +221,29 @@ class UI{
             newTaskPriority.value = 'high';
         },300);
         
+    }
+    
+    //Change the user name on the bottom of the page
+    static changeUserName(){
+        const btn = document.querySelector('#footer-edit-btn'),
+              userNameValue = userName.innerHTML,
+              fieldWidth = getComputedStyle(userName).width;
+
+        btn.classList.toggle('footer-edit-btn-applying');
+
+        if(btn.classList.contains('footer-edit-btn-applying')){
+            userNameField.style.cssText = `width: ${fieldWidth}; display: inline-block;`;
+            userNameField.value = userNameValue;
+            userNameField.focus();
+            userName.style.display = 'none';
+            btn.innerHTML = 'Apply';
+        } else {
+            userNameField.style.display = 'none';
+            userName.innerHTML = userNameField.value;
+            userName.style.display = 'inline-block';
+            btn.innerHTML = '<i class="fas fa-pencil-alt"></i> Edit';
+            Storage.changeUserName(userNameField.value);
+        }
     }
 }
 

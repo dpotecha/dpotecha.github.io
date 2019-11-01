@@ -81,6 +81,22 @@ class Storage{
     static refreshStorage(tasks){
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
+    
+    //Get username from localStorage if it exists, otherwise return default name value
+    static getUserName (){
+        let userName;
+        if(localStorage.getItem('name') != null){
+            userName = JSON.parse(localStorage.getItem('name'));
+        } else {
+            userName = 'Denis Potecha'
+        }
+        return userName;
+    }
+    
+    // Update username in localStorage after its changing
+    static changeUserName (userName){
+        localStorage.setItem('name', JSON.stringify(userName));
+    }
 }
 
 module.exports = Storage;

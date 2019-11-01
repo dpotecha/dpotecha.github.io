@@ -24,6 +24,9 @@ By default all new tasks have the **"Open"** Status. But you can change it if yo
 ### Searching by title
 You also able to find Task by it's **Title**. That allows you to check a specific task in seconds.
 
+### Changing UserName
+You able to change **username** shown on the bottom of the page. To do that you can click the **"Edit"** button next to the User name and fill in any name you want. It will be saved in **Local Storage**, so even after you close/open your browser changes will remain.
+
 ## What is awesome about ToDoList
 * First of all, app has a minimalistic design and nothing will distract you when you planing your day.
 * ToDoList is using a LocalStorage. That allows to keep information about all of your task even if you close your browser. Once you open app again, all of your important tasks will be there.

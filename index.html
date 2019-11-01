@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <title>ToDoList</title>
+    <script src="https://kit.fontawesome.com/4b5cc9403e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+    
+    <div class="container">
+       
+        <h1>TODOList</h1>
+        
+        <div class="content">
+           
+            <!-------Search/Filter Form--------->
+           
+            <form id='search-form'>
+               
+                <button type='submit' class='form-item' id='search-btn'><i class="fas fa-search"></i></button>
+                <input type='search' class='form-item' id='search' placeholder="search by title">
+                <select name="task-status" class='form-item' id="task-status">
+                    <option value="all">all</option>
+                    <option value="open">open</option>
+                    <option value="done">done</option>
+                </select>
+                <select name="task-priority" class='form-item' id="task-priority">
+                    <option value="all">all</option>
+                    <option value="high">high</option>
+                    <option value="normal">normal</option>
+                    <option value="low">low</option>
+                </select>
+                <button type='button' class='form-item' id='create-btn'>Create</button>
+                
+            </form>
+            
+            <!-------Tasks Container--------->
+            
+            <div class="tasks"></div>
+            
+            <!-------Create New Task Form------->
+            <div class="modal-wrap">
+                <div class="create-modal">
+                    <form id="create-form">
+                       <div class="create-form-options">
+                            <label for="create-form-title">Title:</label>
+                            <input type="text" name='create-form-title' id='create-form-title' class='create-form-item'>
+                            <label for="create-form-descr">Description:</label>
+                            <textarea name="create-form-descr" id="create-form-descr" class='create-form-item'></textarea>
+                            <label for="create-form-priority">Priority:</label>
+                            <select name="create-form-priority" id="create-form-priority" class='create-form-item'>
+                                <option value="high">high</option>
+                                <option value="normal">normal</option>
+                                <option value="low">low</option>
+                            </select>
+                        </div>
+                        <div class="create-from-btns">
+                            <button type='button' id='cancel-btn' class='create-form-item'>Cancel</button>
+                            <button type='submit' id='create-form-save' class='create-form-item'>Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+        <footer>
+            <h2 class="list-user">Denis Potecha</h2>
+        </footer>
+    </div>
+    
+    <script type="text/javascript" src="dist/js/bundle.js"></script>    
+</body>
+</html>

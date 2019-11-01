@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "../";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/img/search.png":
+/*!****************************!*\
+  !*** ./src/img/search.png ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/search.png\";\n\n//# sourceURL=webpack:///./src/img/search.png?");
+
+/***/ }),
+
 /***/ "./src/js/app.js":
 /*!***********************!*\
   !*** ./src/js/app.js ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ../sass/main.sass */ \"./src/sass/main.sass\");\r\nconst UI = __webpack_require__(/*! ./ui.js */ \"./src/js/ui.js\");\r\nconst Storage = __webpack_require__(/*! ./storage.js */ \"./src/js/storage.js\");\r\n\r\n// Event show Tasks filtered by 'all', 'all' after document loading\r\nUI.filterTasks();\r\n\r\n//Event Create a new Task\r\ndocument.querySelector('#create-form').addEventListener('submit', (e) => {\r\n    e.preventDefault();\r\n    UI.saveTask();\r\n});\r\n\r\n//Event Manage a Task menu\r\ndocument.querySelector('.tasks').addEventListener('click', (e) => {\r\n    e.preventDefault();\r\n    const btn = e.target;\r\n    let taskCard = btn.parentElement.parentElement.parentElement;\r\n    const taskId = taskCard.dataset.taskId;\r\n    \r\n    //Change a Task status\r\n    if(btn.classList.contains('task-menu-stat')){\r\n        UI.changeTaskStatus(btn, taskCard);\r\n        Storage.changeTaskStatus(taskId);\r\n    } else\r\n        \r\n        //Edit a Task\r\n        if(btn.classList.contains('task-menu-edit') && !btn.classList.contains('btn-disabled')){\r\n            UI.editTask(taskId);\r\n            UI.openModalForm();\r\n            UI.openTaskMenu(taskCard);\r\n    } else \r\n        \r\n        //Delete a Task\r\n        if(btn.classList.contains('task-menu-del')){\r\n            UI.removeTask(taskCard);\r\n            Storage.removeTask(taskId);\r\n    } else \r\n        \r\n        //Open/Close Task menu\r\n        if(btn.classList.contains('task-manage-btn')){\r\n            taskCard = btn.parentElement.parentElement;\r\n            UI.openTaskMenu(taskCard);\r\n    }\r\n});\r\n\r\n//Event Filter tasks by status and priority\r\ndocument.querySelector('#task-priority').addEventListener('change', () => {\r\n    UI.filterTasks();\r\n});\r\ndocument.querySelector('#task-status').addEventListener('change', () => {\r\n    UI.filterTasks();\r\n});\r\n\r\n//Event Search task by title\r\ndocument.querySelector('#search-form').addEventListener('submit', (e) => {\r\n    e.preventDefault();\r\n    UI.findTasks();\r\n});\r\n\r\n//Event Create a new task\r\n  //Open Task Create Form\r\ndocument.querySelector('#create-btn').addEventListener('click', () => {\r\n    document.querySelector('#create-form').dataset.act = 'create';\r\n    UI.openModalForm();\r\n});\r\n\r\n  //Close Task Create Form\r\ndocument.querySelector('#cancel-btn').addEventListener('click', () => {\r\n    UI.closeModalForm();\r\n});\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("__webpack_require__(/*! ../sass/main.sass */ \"./src/sass/main.sass\");\r\n__webpack_require__(/*! ../img/search.png */ \"./src/img/search.png\");\r\nconst UI = __webpack_require__(/*! ./ui.js */ \"./src/js/ui.js\");\r\nconst Storage = __webpack_require__(/*! ./storage.js */ \"./src/js/storage.js\");\r\n\r\n// Event show Tasks filtered by 'all', 'all' after document loading\r\nUI.filterTasks();\r\n\r\n//Event Create a new Task\r\ndocument.querySelector('#create-form').addEventListener('submit', (e) => {\r\n    e.preventDefault();\r\n    UI.saveTask();\r\n});\r\n\r\n//Event Manage a Task menu\r\ndocument.querySelector('.tasks').addEventListener('click', (e) => {\r\n    e.preventDefault();\r\n    const btn = e.target;\r\n    let taskCard = btn.parentElement.parentElement.parentElement;\r\n    const taskId = taskCard.dataset.taskId;\r\n    \r\n    //Change a Task status\r\n    if(btn.classList.contains('task-menu-stat')){\r\n        UI.changeTaskStatus(btn, taskCard);\r\n        Storage.changeTaskStatus(taskId);\r\n    } else\r\n        \r\n        //Edit a Task\r\n        if(btn.classList.contains('task-menu-edit') && !btn.classList.contains('btn-disabled')){\r\n            UI.editTask(taskId);\r\n            UI.openModalForm();\r\n            UI.openTaskMenu(taskCard);\r\n    } else \r\n        \r\n        //Delete a Task\r\n        if(btn.classList.contains('task-menu-del')){\r\n            UI.removeTask(taskCard);\r\n            Storage.removeTask(taskId);\r\n    } else \r\n        \r\n        //Open/Close Task menu\r\n        if(btn.classList.contains('task-manage-btn')){\r\n            taskCard = btn.parentElement.parentElement;\r\n            UI.openTaskMenu(taskCard);\r\n    }\r\n});\r\n\r\n//Event Filter tasks by status and priority\r\ndocument.querySelector('#task-priority').addEventListener('change', () => {\r\n    UI.filterTasks();\r\n});\r\ndocument.querySelector('#task-status').addEventListener('change', () => {\r\n    UI.filterTasks();\r\n});\r\n\r\n//Event Search task by title\r\ndocument.querySelector('#search-form').addEventListener('submit', (e) => {\r\n    e.preventDefault();\r\n    UI.findTasks();\r\n});\r\n\r\n//Event Create a new task\r\n  //Open Task Create Form\r\ndocument.querySelector('#create-btn').addEventListener('click', () => {\r\n    document.querySelector('#create-form').dataset.act = 'create';\r\n    UI.openModalForm();\r\n});\r\n\r\n  //Close Task Create Form\r\ndocument.querySelector('#cancel-btn').addEventListener('click', () => {\r\n    UI.closeModalForm();\r\n});\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ }),
 

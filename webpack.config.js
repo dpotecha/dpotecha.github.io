@@ -6,7 +6,8 @@ module.exports = {
     entry: './src/js/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
+        publicPath: '../'
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -14,15 +15,28 @@ module.exports = {
         })
     ],
     module: {
-        rules: [{
-            test: /\.sass$/,
-            use: [
-                {
-                    loader: MiniCssExtractPlugin.loader,
-                },
-                'css-loader',
-                'sass-loader'
-            ]
-        }]
+        rules: [
+            {
+                test: /\.sass$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/search.png'
+                        }
+                    }
+                ]
+            }
+        ]
     }
 }

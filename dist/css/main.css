@@ -44,8 +44,12 @@ select {
         outline: none; }
     .content #search-form #search-btn {
       flex-grow: 0;
-      background-color: #fff;
-      border-right: none; }
+      background: url(../img/search.png) no-repeat;
+      background-size: contain;
+      background-position: 2px 5px;
+      border-right: none;
+      width: 30px;
+      cursor: pointer; }
     .content #search-form #search {
       flex-grow: 3;
       margin-right: 20px;

@@ -1,4 +1,5 @@
 require('../sass/main.sass');
+require('../img/search.png');
 const UI = require('./ui.js');
 const Storage = require('./storage.js');
 

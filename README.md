@@ -10,7 +10,7 @@ To create your first Task you should click the **"Create"** button on the top le
 ## Features
 
 ### Editing Tasks
-You also able to edit existed Tasks. To do that just click the **"..."** button on the bottom left of the Task Card. In menu that will be opened choose the **"Edit"** option and change any Task info you need. Then just click **"Save"** button.
+You also able to edit existed Tasks. To do that just click the **"..."** button on the bottom right of the Task Card. In menu that will be opened choose the **"Edit"** option and change any Task info you need. Then just click **"Save"** button.
 
 ### Deleting Tasks
 To delete a Task you should open a task menu clicking the **"..."** button and choose **"Delete"** option. Task will be removed immidiatly from the page.
